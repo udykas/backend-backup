@@ -25,7 +25,7 @@ server.use('/api/notes', noteRouter);
 mongoose.Promise = global.Promise;
 
 mongoose
-    .connect('mongodb://localhost/lambdanotesdb')
+    .connect('mongodb://alex:alex93@ds121321.mlab.com:21321/lamdanotesdbalexd')
     .then(mongo => {
         console.log('\n... API Connected to LambdaNotes DB ...\n')
     })
