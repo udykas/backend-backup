@@ -10,7 +10,7 @@ const beport = process.env.PORT || 5000;
 const server = express()
 
 server.use(helmet());
-server.use(cors({ origin: `https://objective-curie-6dd14b.netlify.com/` }));
+server.use(cors({}));
 server.use(express.json());
 
 server.use(express.static(path.join(__dirname, 'build')));
