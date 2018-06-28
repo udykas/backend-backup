@@ -10,13 +10,13 @@ const beport = process.env.PORT || 5000;
 const server = express()
 
 server.use(helmet());
-server.use(cors({ origin: `http://localhost:${feport}` }));
+server.use(cors({ origin: `https://objective-curie-6dd14b.netlify.com/` }));
 server.use(express.json());
 
+server.use(express.static(path.join(__dirname, 'build')));
 
-
-server.get('/', (req, res) => {
-    res.status(200).send(`<h2>DB: ${process.env.mongo}</h2>`);
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 server.use('/api/notes', noteRouter);
